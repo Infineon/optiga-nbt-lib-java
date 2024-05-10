@@ -1,0 +1,40 @@
+// SPDX-FileCopyrightText: 2024 Infineon Technologies AG
+//
+// SPDX-License-Identifier: MIT
+
+/*
+ *
+ * The settings file is used to specify the projects to include in the build.
+ *
+ */
+
+rootProject.name = 'com.infineon.hsw.nbt.java'
+include('com.infineon.hsw.utils')
+include('com.infineon.hsw.channel')
+include('com.infineon.hsw.apdu')
+include('com.infineon.hsw.ndef')
+include('com.infineon.hsw.ndef.bp')
+include('com.infineon.hsw.apdu.nbt')
+project(':com.infineon.hsw.utils').projectDir = file("library/hsw-utils-java")
+project(':com.infineon.hsw.channel').projectDir = file("library/hsw-channel-java")
+project(':com.infineon.hsw.apdu').projectDir = file("library/hsw-apdu-java")
+project(':com.infineon.hsw.ndef').projectDir = file("library/hsw-ndef-java")
+project(':com.infineon.hsw.ndef.bp').projectDir = file("library/hsw-ndef-bp-java")
+project(':com.infineon.hsw.apdu.nbt').projectDir = file("library/hsw-apdu-nbt-java")
+
+gradle.ext.major = 1
+gradle.ext.minor = 1
+gradle.ext.patch = 1
+gradle.ext.prerelease = ''
+
+
+// These files are for internal development purposes and will not be present
+// in the release package.
+gradle.ext.testpath = 'library/hsw-apdu-nbt-java/src/test/test.gradle'
+
+gradle.ext.test = 'src/test/test.gradle'
+gradle.ext.test_settings = 'tests/test-settings.gradle'
+
+if (file(gradle.ext.testpath).exists()) { apply from: gradle.ext.test_settings }
+
+
