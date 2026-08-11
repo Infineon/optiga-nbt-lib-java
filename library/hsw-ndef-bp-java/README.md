@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2026 Infineon Technologies AG
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
 # NFC brand protection record library - Java
 
 The NFC brand protection record library is an extension to the NDEF Java library to create and parse the NFC brand protection record.
@@ -14,56 +19,56 @@ To know more on the functions supported by this library, refer the API documenta
 
 1. Register the brand protection encoder and decoder into the NDEF Java library
 
-   ```java
-   //Imports
-   import com.infineon.hsw.ndef.bp.decoder.BrandProtectionRecordPayloadDecoder;
-   import com.infineon.hsw.ndef.bp.encoder.BrandProtectionRecordPayloadEncoder;
-   import com.infineon.hsw.ndef.NdefManager;
-   import com.infineon.hsw.ndef.IfxNdefMessage;
+    ```java
+    //Imports
+    import com.infineon.hsw.ndef.bp.decoder.BrandProtectionRecordPayloadDecoder;
+    import com.infineon.hsw.ndef.bp.encoder.BrandProtectionRecordPayloadEncoder;
+    import com.infineon.hsw.ndef.NdefManager;
+    import com.infineon.hsw.ndef.IfxNdefMessage;
 
-   try{
-   //Register the encoder and decoder
-   NdefManager.registerEncoder(new RecordType(BrandProtectionRecord.BRAND_PROTECTION_RTD_TYPE),
-   	new BrandProtectionRecordPayloadEncoder());
-   NdefManager.registerDecoder(new RecordType(BrandProtectionRecord.BRAND_PROTECTION_RTD_TYPE),
-   	new BrandProtectionRecordPayloadDecoder());
-   }catch(Exception exception){
-   	// Handle the exception here
-   }
-   ```
+    try{
+    //Register the encoder and decoder
+    NdefManager.registerEncoder(new RecordType(BrandProtectionRecord.BRAND_PROTECTION_RTD_TYPE),
+    new BrandProtectionRecordPayloadEncoder());
+    NdefManager.registerDecoder(new RecordType(BrandProtectionRecord.BRAND_PROTECTION_RTD_TYPE),
+    new BrandProtectionRecordPayloadDecoder());
+    }catch(Exception exception){
+    // Handle the exception here
+    }
+    ```
 
 2. Use the brand protection record
 
-   ```java
-   // Build the record
-   BrandProtectionRecord brandProtectionRecord = new BrandProtectionRecord(CERTIFICATE_DATA);
+    ```java
+    // Build the record
+    BrandProtectionRecord brandProtectionRecord = new BrandProtectionRecord(CERTIFICATE_DATA);
 
-   // Encode into NDEF message
-   IfxNdefMessage message = new IfxNdefMessage(brandProtectionRecord);
-   NdefManager ndefManager = NdefManager.getInstance();
-   byte[] messageBytes = ndefManager.encode(message);
+    // Encode into NDEF message
+    IfxNdefMessage message = new IfxNdefMessage(brandProtectionRecord);
+    NdefManager ndefManager = NdefManager.getInstance();
+    byte[] messageBytes = ndefManager.encode(message);
 
-   // Decode the encoded NDEF message
-   IfxNdefMessage decodedMessage = ndefManager.decode(messageBytes);
+    // Decode the encoded NDEF message
+    IfxNdefMessage decodedMessage = ndefManager.decode(messageBytes);
 
-   // Decode the record
-   List<AbstractRecord> decodedRecords = decodedMessage.getNdefRecords();
-   try {
-   	BrandProtectionRecord decodedBrandProtectionRecord =
-   		(UriRecord)ndefManager.decodeRecord(decodedRecords.get(0));
+    // Decode the record
+    List<AbstractRecord> decodedRecords = decodedMessage.getNdefRecords();
+    try {
+    BrandProtectionRecord decodedBrandProtectionRecord =
+      (UriRecord)ndefManager.decodeRecord(decodedRecords.get(0));
 
-   	//Work with the record...
+    //Work with the record...
 
-   } catch (NfcException e) {
-   	// ...
-   }
-   ```
+    } catch (NfcException e) {
+    // ...
+    }
+    ```
 
 ## Architecture
 
 This image shows the software architecture of the library.
 
-<img src="./docs/images/hsw-ndef-bp-java-architecture.png" width="500"/>
+![Architecture diagram](./docs/images/hsw-ndef-bp-java-architecture.png)
 
 ## Components
 
@@ -87,13 +92,13 @@ This image shows the software architecture of the library.
 
 This UML sequence diagram describes the interaction between the components.
 
-<img src="./docs/images/hsw-ndef-bp-java-interaction.png" width="1000"/>
+![UML sequence diagram showing interaction between components](./docs/images/hsw-ndef-bp-java-interaction.png)
 
 ## Directory structure
 
 The library directory is structured according to the Pitchfork Layout.
 
-```
+```text
 hsw-ndef-bp-java
 |-- LICENSES/                       # Includes list of licenses used for the library package
 |-- docs/                           # Includes images and the generated API reference

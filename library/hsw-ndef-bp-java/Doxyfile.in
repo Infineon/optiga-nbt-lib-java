@@ -1,0 +1,47 @@
+# SPDX-FileCopyrightText: Copyright (c) 2024-2026 Infineon Technologies AG
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# Doxyfile 1.9.8
+
+# Project metadata
+PROJECT_NAME           = hsw-ndef-bp-java
+PROJECT_BRIEF          = "Test Specifications for ndef brand protection library for java."
+
+# Doxygen build configuration
+INPUT                   = "src\test\java"
+FILE_PATTERNS           = *.java
+RECURSIVE               = YES
+FULL_PATH_NAMES         = YES
+OPTIMIZE_OUTPUT_JAVA    = YES
+ALPHABETICAL_INDEX      = YES
+GENERATE_TODOLIST       = NO
+GENERATE_TESTLIST       = YES
+TYPEDEF_HIDES_STRUCT    = YES
+BRIEF_MEMBER_DESC       = NO
+EXTRACT_ALL             = NO
+STRIP_CODE_COMMENTS     = YES
+ENABLE_PREPROCESSING    = YES
+SKIP_FUNCTION_MACROS    = YES
+HIDE_IN_BODY_DOCS       = YES
+SORT_MEMBER_DOCS        = NO
+HIDE_COMPOUND_REFERENCE = YES
+HIDE_FRIEND_COMPOUNDS   = YES
+HIDE_IN_BODY_DOCS       = YES
+HIDE_SCOPE_NAMES        = YES
+HIDE_UNDOC_CLASSES      = YES
+HIDE_UNDOC_MEMBERS      = YES
+HIDE_UNDOC_RELATIONS    = YES
+JAVADOC_AUTOBRIEF       = YES
+JAVADOC_BANNER          = YES
+
+
+# Doxygen output configuration
+OUTPUT_DIRECTORY       = "build\TestSpecification"
+GENERATE_LATEX	  	   = NO
+
+# Doxygen execution configuration
+QUIET                  = YES
+WARNINGS               = YES
+WARN_NO_PARAMDOC       = YES
+WARN_AS_ERROR          = NO

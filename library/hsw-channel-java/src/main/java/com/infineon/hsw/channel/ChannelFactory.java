@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Infineon Technologies AG
+// SPDX-FileCopyrightText: Copyright (c) 2024 Infineon Technologies AG
 //
 // SPDX-License-Identifier: MIT
 
@@ -97,7 +97,6 @@ public final class ChannelFactory {
         Enumeration<IChannelProvider> factory = Collections.enumeration(
                 factoryRegistry);
         String[] channelTypes = new String[factoryRegistry.size()];
-
         for (int i = 0; i < channelTypes.length; i++) {
             channelTypes[i] = factory.nextElement().getProviderName();
         }
@@ -197,7 +196,6 @@ public final class ChannelFactory {
     public static IChannelProvider lookupProvider(final String channelType) {
         Enumeration<IChannelProvider> registry = Collections.enumeration(
                 factoryRegistry);
-
         while (registry.hasMoreElements()) {
             IChannelProvider provider = registry.nextElement();
 

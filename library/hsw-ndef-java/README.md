@@ -31,69 +31,69 @@ To know more on the functions supported by this library, refer the API documenta
 
 1. Include the following headers
 
-   ```java
-   import com.infineon.hsw.ndef.exceptions.NdefException;
-   import com.infineon.hsw.ndef.IfxNdefMessage;
-   import com.infineon.hsw.ndef.NdefManager;
-   import com.infineon.hsw.ndef.records.AbstractRecord;
-   import com.infineon.hsw.ndef.records.rtd.UriRecord;
-   import com.infineon.hsw.ndef.records.rtd.UriRecord.UriIdentifier;
-   import com.infineon.hsw.ndef.records.rtd.IfxNdefRecord;
-   ```
+    ```java
+    import com.infineon.hsw.ndef.exceptions.NdefException;
+    import com.infineon.hsw.ndef.IfxNdefMessage;
+    import com.infineon.hsw.ndef.NdefManager;
+    import com.infineon.hsw.ndef.records.AbstractRecord;
+    import com.infineon.hsw.ndef.records.rtd.UriRecord;
+    import com.infineon.hsw.ndef.records.rtd.UriRecord.UriIdentifier;
+    import com.infineon.hsw.ndef.records.rtd.IfxNdefRecord;
+    ```
 
 2. Encode the URI record
 
-   ```java
-   // Build URI record
-   UriRecord uriRecord = new UriRecord(UriIdentifier.URI_HTTPS_WWW, "infineon.com");
+    ```java
+    // Build URI record
+    UriRecord uriRecord = new UriRecord(UriIdentifier.URI_HTTPS_WWW, "infineon.com");
 
-   // Build external type record
-   byte[] extRecordType = "infineon.com:nfc-test".getBytes();
-   byte[] extPayload = "Infineon Technologies".getBytes();
-   IfxNdefRecord extRecord = new IfxNdefRecord(NdefConstants.TNF_EXTERNAL_TYPE, false, extRecordType, null, extPayload);
-   ```
+    // Build external type record
+    byte[] extRecordType = "infineon.com:nfc-test".getBytes();
+    byte[] extPayload = "Infineon Technologies".getBytes();
+    IfxNdefRecord extRecord = new IfxNdefRecord(NdefConstants.TNF_EXTERNAL_TYPE, false, extRecordType, null, extPayload);
+    ```
 
 3. Encode the NDEF message
 
-   ```java
-   // Encode the records into an NDEF message
-   IfxNdefMessage message = new IfxNdefMessage(uriRecord, extRecord);
+    ```java
+    // Encode the records into an NDEF message
+    IfxNdefMessage message = new IfxNdefMessage(uriRecord, extRecord);
 
-   NdefManager ndefManager = NdefManager.getInstance();
-   byte[] messageBytes =	ndefManager.encode(message);
-   byte[] messageBytesWithLen = ndefManager.encode(message, true);
-   ```
+    NdefManager ndefManager = NdefManager.getInstance();
+    byte[] messageBytes =    ndefManager.encode(message);
+    byte[] messageBytesWithLen = ndefManager.encode(message, true);
+    ```
 
 4. Decode the NDEF message
 
-   ```java
-   // Decode the encoded NDEF message
-   IfxNdefMessage decodedMessage = ndefManager.decode(messageBytes);
-   ```
+    ```java
+    // Decode the encoded NDEF message
+    IfxNdefMessage decodedMessage = ndefManager.decode(messageBytes);
+    ```
 
 5. Decode the URI record
 
-   ```java
-   // Decode the records
-   List<AbstractRecord> decodedRecords = decodedMessage.getNdefRecords();
-   try {
-   	UriRecord decodedUriRecord = (UriRecord) ndefManager.decodeRecord(decodedRecords.get(0));
-   	IfxNdefRecord decodedExtRecord = (IfxNdefRecord) ndefManager.decodeRecord(decodedRecords.get(1));
+    ```java
+    // Decode the records
+    List<AbstractRecord> decodedRecords = decodedMessage.getNdefRecords();
+    try {
+    UriRecord decodedUriRecord = (UriRecord) ndefManager.decodeRecord(decodedRecords.get(0));
+    IfxNdefRecord decodedExtRecord = (IfxNdefRecord) ndefManager.decodeRecord(decodedRecords.get(1));
 
-   	// Work with the records
-   	String decodedUriRecordIdentifier = decodedUriRecord.getUriWithIdentifier();
-   	byte[] decodedExtRecordPayload = decodedExtRecord.getPayload();
-   	byte[] decodedExtRecordType = decodedExtRecord.getRecordType().getType();
-   } catch (NdefException e) {
-   	// catch exception here
-   }
-   ```
+    // Work with the records
+    String decodedUriRecordIdentifier = decodedUriRecord.getUriWithIdentifier();
+    byte[] decodedExtRecordPayload = decodedExtRecord.getPayload();
+    byte[] decodedExtRecordType = decodedExtRecord.getRecordType().getType();
+    } catch (NdefException e) {
+    // catch exception here
+    }
+    ```
 
 ## Architecture
 
 This image shows the software architecture of the library.
 
-<img src="./docs/images/hsw-ndef-java-architecture.png" width="500"/>
+![Architecture diagram](./docs/images/hsw-ndef-java-architecture.png)
 
 ## Components
 
@@ -129,14 +129,13 @@ This image shows the software architecture of the library.
 
 This UML sequence diagram describes the interaction between the components.
 
-<img src="./docs/images/hsw-ndef-java-interaction.png" width="800"/>
+![UML sequence diagram showing interaction between components](./docs/images/hsw-ndef-java-interaction.png)
 
 ## Directory structure
 
 The library directory is structured according to the Pitchfork Layout.
 
-```
-hsw-ndef-java
+```text
 |-- LICENSES/                       # Includes list of licenses used for the library package
 |-- docs/                           # Includes images and the generated API reference
 |-- gradle/                         # Includes gradle wrapper configuration files

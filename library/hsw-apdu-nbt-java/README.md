@@ -22,54 +22,54 @@ To know more on the functions supported by this library, refer the API documenta
 
 1. Include the following headers
 
-   ```java
-   import com.infineon.hsw.apdu.nbt.NbtCommandSet;
-   import com.infineon.hsw.apdu.nbt.NbtApduResponse;
-   import com.infineon.hsw.utils.Utils;
+    ```java
+    import com.infineon.hsw.apdu.nbt.NbtCommandSet;
+    import com.infineon.hsw.apdu.nbt.NbtApduResponse;
+    import com.infineon.hsw.utils.Utils;
 
-   // Communication protocol
-   import com.infineon.hsw.apdu.ApduChannel;
-   import com.infineon.hsw.apdu.ApduResponse;
-   ```
+    // Communication protocol
+    import com.infineon.hsw.apdu.ApduChannel;
+    import com.infineon.hsw.apdu.ApduResponse;
+    ```
 
 2. Initialize the command set
 
-   ```java
-   // Initialize the APDU channel with communication channel (For example, PCSC and NFC)
-   ApduChannel apduChannel = new ApduChannel(channel);
+    ```java
+    // Initialize the APDU channel with communication channel (For example, PCSC and NFC)
+    ApduChannel apduChannel = new ApduChannel(channel);
 
-   // Create an instance of the NBT APDU command set
-   NbtCommandSet commandSet = new NbtCommandSet(apduChannel, 0);
+    // Create an instance of the NBT APDU command set
+    NbtCommandSet commandSet = new NbtCommandSet(apduChannel, 0);
 
-   // Connect to the OPTIGA&trade; Authenticate NBT
-   apduChannel.connect();
-   ```
+    // Connect to the OPTIGA&trade; Authenticate NBT
+    apduChannel.connect();
+    ```
 
 3. Communicate with the OPTIGA&trade; Authenticate NBT
 
-   ```java
-   // Execute commands
-   NbtApduResponse apduResponse;
+    ```java
+    // Execute commands
+    NbtApduResponse apduResponse;
 
-   apduResponse = commandSet.selectApplication();
-   apduResponse.checkStatus(); // Checks SW success, else throws an exception
-   apduResponse.getSW();   // Returns response status word
+    apduResponse = commandSet.selectApplication();
+    apduResponse.checkStatus(); // Checks SW success, else throws an exception
+    apduResponse.getSW();   // Returns response status word
 
-   apduResponse = commandSet.selectFile(CC_FILE_ID);
-   apduResponse.checkStatus();
+    apduResponse = commandSet.selectFile(CC_FILE_ID);
+    apduResponse.checkStatus();
 
-   byte expected_len = (byte) 0x10;
-   short offset = (short) 0x0000;
-   apduResponse = commandSet.readBinary(offset, expected_len);
-   apduResponse.checkStatus();
-   apduResponse.getData(); // Returns response data bytes
-   ```
+    byte expected_len = (byte) 0x10;
+    short offset = (short) 0x0000;
+    apduResponse = commandSet.readBinary(offset, expected_len);
+    apduResponse.checkStatus();
+    apduResponse.getData(); // Returns response data bytes
+    ```
 
 ## Architecture
 
 This image shows the software architecture of the library.
 
-<img src="./docs/images/hsw-apdu-nbt-java-architecture.png" width="500"/>
+![Architecture diagram](./docs/images/hsw-apdu-nbt-java-architecture.png)
 
 ## Components
 
@@ -86,7 +86,7 @@ This image shows the software architecture of the library.
 
 This UML sequence diagram describes the interaction between the components.
 
-<img src="./docs/images/hsw-apdu-nbt-java-interaction.png" width="500"/>
+![UML sequence diagram showing interaction between components](./docs/images/hsw-apdu-nbt-java-interaction.png)
 
 ## Directory structure
 

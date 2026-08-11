@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2024 Infineon Technologies AG
+
+SPDX-License-Identifier: MIT
+-->
+
+<readers>
+  <reader name="Nbt_Perso_State_Reader" state="Perso" value="Identiv uTrust 4701 F CL Reader 0"></reader>
+  <reader name="Nbt_Operational_State_Reader" state="Operational" value="Identiv uTrust 4701 F CL Reader 1"> </reader>
+</readers>

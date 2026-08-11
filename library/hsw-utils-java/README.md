@@ -12,31 +12,31 @@ The below example illustrates the usage for getting subdata bytes from a byte ar
 
 1. Include headers
 
-   ```java
-   import com.infineon.hsw.utils.Tlv;
-   import com.infineon.hsw.utils.Utils;
-   import java.util.Vector;
-   import java.util.List;
-   ```
+    ```java
+    import com.infineon.hsw.utils.Tlv;
+    import com.infineon.hsw.utils.Utils;
+    import java.util.Vector;
+    import java.util.List;
+    ```
 
 2. Sample usage of Utils method to encode a DGI TLV list
 
-   ```java
-   try {
-   	byte[] DGI_TLV_DATA_MULTIPLE_TLV = new byte[] {
-   		(byte) 0xA0, (byte) 0x01, (byte) 0x01, (byte) 0x0C, (byte) 0xC0,
-   		(byte) 0x01, (byte) 0x02, (byte) 0x03, (byte) 0x04, (byte) 0xC5,
-   		(byte) 0x06, (byte) 0x01, (byte) 0x08
-   	};
+    ```java
+    try {
+    byte[] DGI_TLV_DATA_MULTIPLE_TLV = new byte[] {
+        (byte) 0xA0, (byte) 0x01, (byte) 0x01, (byte) 0x0C, (byte) 0xC0,
+        (byte) 0x01, (byte) 0x02, (byte) 0x03, (byte) 0x04, (byte) 0xC5,
+        (byte) 0x06, (byte) 0x01, (byte) 0x08
+    };
 
-   	List<Tlv> tlvList = new Vector<>();
-   	tlvList.add(new Tlv(0xA001, null, new byte[] { (byte) 0x0C }));
-   	tlvList.add(new Tlv(0xC001, null, new byte[] { (byte) 0x03, (byte) 0x04 }));
-   	tlvList.add(new Tlv(0xC506, null, new byte[] { (byte) 0x08 }));
+    List<Tlv> tlvList = new Vector<>();
+    tlvList.add(new Tlv(0xA001, null, new byte[] { (byte) 0x0C }));
+    tlvList.add(new Tlv(0xC001, null, new byte[] { (byte) 0x03, (byte) 0x04 }));
+    tlvList.add(new Tlv(0xC506, null, new byte[] { (byte) 0x08 }));
 
-   	byte[] encodedTLVs = Tlv.buildDgiTlvList(tlvList);
+    byte[] encodedTLVs = Tlv.buildDgiTlvList(tlvList);
 
-   } catch (Exception e) {
+    } catch (Exception e) {
 
-   }
-   ```
+    }
+    ```

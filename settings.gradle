@@ -1,5 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Infineon Technologies AG
-//
+// SPDX-FileCopyrightText: Copyright (c) 2024-2026 Infineon Technologies AG
 // SPDX-License-Identifier: MIT
 
 /*
@@ -24,17 +23,5 @@ project(':com.infineon.hsw.apdu.nbt').projectDir = file("library/hsw-apdu-nbt-ja
 
 gradle.ext.major = 1
 gradle.ext.minor = 1
-gradle.ext.patch = 1
+gradle.ext.patch = 2
 gradle.ext.prerelease = ''
-
-
-// These files are for internal development purposes and will not be present
-// in the release package.
-gradle.ext.testpath = 'library/hsw-apdu-nbt-java/src/test/test.gradle'
-
-gradle.ext.test = 'src/test/test.gradle'
-gradle.ext.test_settings = 'tests/test-settings.gradle'
-
-if (file(gradle.ext.testpath).exists()) { apply from: gradle.ext.test_settings }
-
-

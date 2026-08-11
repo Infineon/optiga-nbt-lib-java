@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2024 Infineon Technologies AG
+// SPDX-FileCopyrightText: Copyright (c) 2024-2026 Infineon Technologies AG
 //
 // SPDX-License-Identifier: MIT
 
@@ -10,7 +10,7 @@ plugins {
     id 'java-library'
 }
 
-if (file(gradle.ext.test).exists()) { apply from: gradle.ext.test }
+if (gradle.ext.has('test') && file(gradle.ext.test).exists()) { apply from: gradle.ext.test }
 
 dependencies {
     implementation project(':com.infineon.hsw.ndef')
