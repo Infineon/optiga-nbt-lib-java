@@ -37,7 +37,7 @@ To know more on the functions supported by this library, refer the API documenta
     }
     ```
 
-2. Use the brand protection record
+1. Use the brand protection record
 
     ```java
     // Build the record

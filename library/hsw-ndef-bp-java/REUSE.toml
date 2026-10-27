@@ -16,6 +16,12 @@ SPDX-FileCopyrightText = "2026 Infineon Technologies AG"
 SPDX-License-Identifier = "MIT"
 
 [[annotations]]
+path = "src/test/resources/TestCertificate.crt"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Infineon Technologies AG"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
 path = ["**/gradlew", "**/gradlew.bat", "**/gradle/wrapper/gradle-wrapper.jar", "**/gradle/wrapper/gradle-wrapper.properties"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "Copyright (c) 2015-2021 the original authors"

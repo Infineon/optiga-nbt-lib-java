@@ -15,7 +15,7 @@ This is the OPTIGA™ Authenticate NBT Host Library for Java, which supports the
 
 The host library offers an extensive API to interact with the OPTIGA™ Authenticate NBT and to utilize its full functionality. The host library is mainly intended to be used in Java-based Android apps interfacing to the OPTIGA™ Authenticate NBT via NFC.
 
-Refer to the [OPTIGA™ Authenticate NBT - GitHub overview](https://github.com/Infineon/optiga-nbt) repository for an overview of the available host software for the OPTIGA™ Authenticate NBT.
+Refer to the [OPTIGA™ Authenticate NBT: Host software overview](https://github.com/Infineon/optiga-nbt) repository for an overview of the available host software for the OPTIGA™ Authenticate NBT.
 
 ### Features
 
@@ -28,7 +28,7 @@ Refer to the [OPTIGA™ Authenticate NBT - GitHub overview](https://github.com/I
 
 ### User guide
 
-This host library's [user guide](https://infineon.github.io/optiga-nbt) is available in the [`docs`](./docs) folder.
+This host library's [user guide](https://infineon.github.io/optiga-nbt/projects/optiga-nbt-lib-java) is available as part of the online documentation for the host software offering of the OPTIGA™ Authenticate NBT on [GitHub.io](https://infineon.github.io/optiga-nbt).
 
 ## Getting started
 
@@ -44,7 +44,7 @@ Minimum required versions:
 ### Project layout
 
 ```text
-├── .reuse/          # Configuration for the this project's license information
+├── .github/         # Includes GitHub workflow configuration files
 ├── docs/            # Includes documentation sources and images
 ├── gradle/          # Includes Gradle wrapper configuration files
 ├── library/         # Includes dependent modules of the host library
@@ -90,7 +90,7 @@ Please see our [LICENSE](LICENSE) for copyright and license information.
 
 This project follows the [REUSE](https://reuse.software/) approach, so copyright and licensing
 information is available for every file (including third party components) either in the file
-header, an individual *.license file or the [REUSE.toml](REUSE.toml) file. All licenses can be found in the
+header, an individual *.license file or a REUSE.toml file. All licenses can be found in the
 [LICENSES](LICENSES) folder.
 
 ### Related resources

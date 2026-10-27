@@ -19,7 +19,7 @@ The below example illustrates the usage for getting subdata bytes from a byte ar
     import java.util.List;
     ```
 
-2. Sample usage of Utils method to encode a DGI TLV list
+1. Sample usage of Utils method to encode a DGI TLV list
 
     ```java
     try {

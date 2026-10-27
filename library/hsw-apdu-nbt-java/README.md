@@ -32,7 +32,7 @@ To know more on the functions supported by this library, refer the API documenta
     import com.infineon.hsw.apdu.ApduResponse;
     ```
 
-2. Initialize the command set
+1. Initialize the command set
 
     ```java
     // Initialize the APDU channel with communication channel (For example, PCSC and NFC)
@@ -45,7 +45,7 @@ To know more on the functions supported by this library, refer the API documenta
     apduChannel.connect();
     ```
 
-3. Communicate with the OPTIGA&trade; Authenticate NBT
+1. Communicate with the OPTIGA&trade; Authenticate NBT
 
     ```java
     // Execute commands

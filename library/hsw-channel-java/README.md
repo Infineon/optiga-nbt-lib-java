@@ -15,20 +15,20 @@ To know more on the functions supported by this library, please check the API do
     import com.infineon.hsw.channel.ChannelFactory;
     ```
 
-2. Implement channel provider with the help of IChannel interface
+1. Implement channel provider with the help of IChannel interface
 
     ```java
     // For eg; PcscChannelProvider()
     // code placeholder
     ```
 
-3. Include channel provider headers
+1. Include channel provider headers
 
     ```java
     // import <channel_provider_headers>;
     ```
 
-4. Implement a function to register the channel provider with the ChannelFactory.
+1. Implement a function to register the channel provider with the ChannelFactory.
 
 ## Example
 

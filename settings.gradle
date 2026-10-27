@@ -23,5 +23,5 @@ project(':com.infineon.hsw.apdu.nbt').projectDir = file("library/hsw-apdu-nbt-ja
 
 gradle.ext.major = 1
 gradle.ext.minor = 1
-gradle.ext.patch = 2
+gradle.ext.patch = 3
 gradle.ext.prerelease = ''

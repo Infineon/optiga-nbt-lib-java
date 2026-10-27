@@ -41,7 +41,7 @@ To know more on the functions supported by this library, refer the API documenta
     import com.infineon.hsw.ndef.records.rtd.IfxNdefRecord;
     ```
 
-2. Encode the URI record
+1. Encode the URI record
 
     ```java
     // Build URI record
@@ -53,7 +53,7 @@ To know more on the functions supported by this library, refer the API documenta
     IfxNdefRecord extRecord = new IfxNdefRecord(NdefConstants.TNF_EXTERNAL_TYPE, false, extRecordType, null, extPayload);
     ```
 
-3. Encode the NDEF message
+1. Encode the NDEF message
 
     ```java
     // Encode the records into an NDEF message
@@ -64,14 +64,14 @@ To know more on the functions supported by this library, refer the API documenta
     byte[] messageBytesWithLen = ndefManager.encode(message, true);
     ```
 
-4. Decode the NDEF message
+1. Decode the NDEF message
 
     ```java
     // Decode the encoded NDEF message
     IfxNdefMessage decodedMessage = ndefManager.decode(messageBytes);
     ```
 
-5. Decode the URI record
+1. Decode the URI record
 
     ```java
     // Decode the records
